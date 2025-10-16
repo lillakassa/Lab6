@@ -13,9 +13,15 @@ All three parameters are real (floating point) numbers.
 */
 
 #include <stdio.h>
+typedef Struct {
+    float x;
+    float y;
+    float r;
+}circle;
 
 int main()
 {
+
 
     return 0;
 }

@@ -13,7 +13,7 @@ Find an unfinished program below that contains the appropriate types and the abo
 */
 
 #include <stdio.h>
-
+#include <string.h>
 typedef struct Date
 { // Create a stuct definition, not an instance, it is a type. With typedef we give it a new name (struct Date-->Date
     int year, month, day;
@@ -27,13 +27,13 @@ typedef struct Competitor
 } Competitor;
 
 void Date_print(Date d); // Here we declare that there is a function
-// that "eats" Date and do not return (poos) anything. You need to write a function at the bottom!
+// that "eats" Date and does not return (poos) anything. You need to write a function at the bottom!
 
 Competitor Competitor_read(); // This function will read data from user store in a stucture
 // and return with the new element (to be put into the array later)
 
 void Competitor_print(Competitor c);
-
+ 
 int main()
 {
     Competitor competitors[6] = {
@@ -56,24 +56,50 @@ int main()
     /* was competitor 1 born in the same year as competitor 2? */
     /* complete the Competitor_print() function,
      * then print all data of competitor 1 */
-    /* Check if Abnorm, Al was competeing (using strcmp())
+    /* Check if Abnorm, Al was competeing (using strcmp()) strcmp(tr1,s"ab, normal")
     /* Create a function to add a new competitor according to user's input (using scanf)*/
-    /*Add a new competitor as 6th element (index 5)*/
+    /*Add a new compeprintf("%s", Competitor[0].name);titor as 6th element (index 5)*/
     /* at last print all data of all competitors. */
 
+    printf("%s", competitors[0].name);
+    printf("%d", competitors[2].rank);
+    printf("%c", competitors[1].name[0]);
+    printf("%s", competitors[1].rank <= 3 ? "Yes" : "No");
+    printf("s", competitors[4].rank > competitors[3].rank ? "Yes" : "NO");
+    printf("%s", competitors[1].birth.year == competitors[2].birth.year ? "Yes" : "No");
+    Competitor_print(competitors[1]);
+    for (int i = 0; i < 6; i++)
+    {
+        strcmp(competitors[i].name, "Abnorm, Al");
+    }
+
+    printf("%s", competitors[0].name);
+    competitors[5]=Competitor_read();
+Write a program to store the parameters of a circle on a 2D plane:
     return 0;
 }
 void Date_print(Date d)
 {
-    /* print year, month and day */
+    printf("%d. %d %d", d.year, d.month, d.day);
+    /* print printf("%s", Competitor[0].naWrite a program to store the parameters of a circle on a 2D plane:me);year, month and day */
 }
 
 void Competitor_print(Competitor c)
 {
+    printf("%s ", c.name);
+    Date_print(c.birth);
+    printf("%d", c.rank);
     /* print all data of the competitor */
 }
 
 Competitor Competitor_read()
 {
+    Competitor c;
+    scanf("%s", c.name);
+    Date d;
+    scanf("%d %d %d", &d.year, &d.month, &d.day);
+    c.birth = d;
+    scanf("%d", &c.rank);
+    return c;
     /* prompt the user the give details of a new competitor, create the new competitor and return with that!*/
 }
